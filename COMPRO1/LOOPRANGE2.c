@@ -1,0 +1,18 @@
+#include<stdio.h>
+main()
+{
+    int x,y;
+    scanf("%d %d",&x,&y);
+    if(x>y){
+        while(x>=y){
+            printf("%d ",x);
+            x--;
+        }
+    }
+    else{
+        while(x<=y){
+        printf("%d ",x);
+        x++;
+    }
+    }
+}

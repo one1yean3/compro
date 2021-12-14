@@ -1,0 +1,40 @@
+#include<stdio.h>
+void main()
+{
+    int pill,capsule,W,O,N,npill,ncap;
+    float T;
+    scanf("%d %d",&pill,&capsule);
+    scanf("%d",&N);
+    for(int i=0;i<N;i++){
+        scanf("%d %f %d",&W,&T,&O);
+        if(T>=37.5&&O<90){
+            npill=3*W;
+        }
+        else if(T>=37.5&&O>=90){
+            npill=2*W;
+        }
+        else if(T<37.5&&O<90){
+            npill=2*W;
+        }
+        else{
+            npill=0;
+        }
+        ncap=120+(4*npill);
+        if(pill-npill<0&&capsule-ncap<0){
+            printf("Not enough both");
+        }
+        else if(pill-npill<0){
+            printf("No Favipiravir");
+        }
+        else if(capsule-ncap<0){
+            printf("No capsule");
+        }
+        else{
+            printf("OK");
+            pill=pill-npill;
+            capsule=capsule-ncap;
+        }
+        printf("\n");
+    }
+    printf("%d %d",pill,capsule);
+}

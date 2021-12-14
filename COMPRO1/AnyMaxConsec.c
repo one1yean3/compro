@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<limits.h>
+void main()
+{
+    int x,y=0,u=1,MAX=INT_MIN,z;
+    for(;;)
+    {
+        scanf("%d",&x);
+        if(x==0)
+        {
+            break;
+        }
+        if(x==y)
+        {
+            u++;
+        }
+        if(x!=y)
+        {
+            u=1;
+        }
+        y=x;
+        if(u>MAX)
+        {
+            MAX=u;
+            z=x;
+        }
+    }
+    printf("%d\n%d",MAX,z);
+}

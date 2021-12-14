@@ -1,0 +1,38 @@
+#include<stdio.h>
+main()
+{
+    int w=0,rem=0,car=0;
+    while(1)
+    {
+        scanf("%d",&w);
+        if(w<0)
+        {
+            break;
+        }
+        else
+        {
+            w=rem+w;
+            if(w>=500)
+            {
+                car=w/800;
+                rem=w-(car*800);
+                if(rem>500)
+                 {
+                    rem-=500;
+                    car++;
+                    printf("%d\n",car);
+                }
+                else
+                {
+                    printf("%d\n",car);
+                }
+            }
+            else
+            {
+                rem+=w;
+                car=0;
+                printf("%d\n",car);
+            }
+        }
+    }
+}
